@@ -1,0 +1,16 @@
+<div class="input-group mb-3" style="width: 600px;margin-right: 15px;">
+    <div class="input-group-prepend" style="padding-right:15px ;">
+        <span class="input-group-text" id="inputGroup-sizing-default">Enter a number</span>
+    </div>
+    <input type="text" [(ngModel)]="currentMsgToChild1" class="form-control" id="ex3" aria-label="Default"
+        aria-describedby="inputGroup-sizing-default">
+
+    <select class="form-select" aria-label="Default select example">
+        <option selected>View Saved Results</option>
+        <option *ngFor="let number of dataArray" [value]="number">{{number}}</option>
+    </select>
+</div>
+
+
+
+<app-square-result (newItemEvent)="addItem($event)" [msgFromParent1]='currentMsgToChild1'> </app-square-result>
